@@ -12,7 +12,9 @@
   "env": {
     "env": {
       "production": {
-        "only": ["app"],
+        "only": [
+          "app"
+        ],
         "plugins": [
           "transform-react-remove-prop-types",
           "transform-react-constant-elements",
@@ -20,5 +22,8 @@
         ]
       }
     }
-  }
+  },
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
 }

@@ -1,17 +1,16 @@
 import React, {Component} from 'react'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import Aux from './hoc/Aux'
+import {AuthRoutes} from "./components/Routes";
 
 export class App extends Component {
-  static propTypes = {}
-
-  state = {
-    jhon: 'doe'
-  }
-
   render() {
     return (
-      <div>
-        <div>Welcome to App {this.state.jhon}</div>
-      </div>
+      <Router>
+        <Aux>
+          <AuthRoutes/>
+        </Aux>
+      </Router>
     )
   }
 }
