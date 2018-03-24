@@ -1,0 +1,38 @@
+$mf-breakpoints := {
+  small:576px,
+  medium:768px,
+  large:992px,
+  extra-large:1200px,
+}
+
+$df-breakpoints := {
+  extra-small: 575.98px,
+  small: 767.98px,
+  medium: 991.98px,
+  large: 1199.98px,
+}
+
+$mf-queries := {
+  small: "only screen and (min-width: " + $mf-breakpoints.small + ")",
+  medium: "only screen and (min-width: "+ $mf-breakpoints.medium ")",
+  large:" only screen and (min-width: "+$mf-breakpoints.large+")",
+  extra-large: "only screen and min-width: "+$mf-breakpoints.extra-large+")",
+}
+
+$df-queries := {
+  extra-small: "only screen and (max-width: "+$df-breakpoints.extra-small+")",
+  small: "only screen and (max-width: "+$df-breakpoints.small+")",
+  medium: "only screen and (max-width: "+$df-breakpoints.medium+")",
+  large: "only screen and (max-width: "+$df-breakpoints.large+")",
+}
+
+// Mobile first query mixin
+mfq(device)
+  @media $mf-queries[device]
+    {block}
+
+
+//  Desktop first query mixin
+dfq(device)
+  @media $df-queries[device]
+    {block}

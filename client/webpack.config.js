@@ -78,13 +78,38 @@ module.exports = (env, options) => {
           })
         },
         {
-          test: /\.(eot|svg|otf|ttf|woff2?)$/,
-          use: 'file-loader'
+          test: /\.(eot|otf|ttf|woff2?)$/,
+          use: {
+            loader: 'file-loader',
+            query: {
+              publicPath: 'static/fonts/',
+              outputPath: 'static/fonts/',
+              name: '[hash].[ext]'
+            }
+          }
+        },
+        {
+          test: /\.svg$/,
+          use: {
+            loader: 'file-loader',
+            query: {
+              publicPath: 'static/images/',
+              outputPath: 'static/images/',
+              name: '[hash].[ext]'
+            }
+          }
         },
         {
           test: /\.(jpg|png|gif)$/,
           use: [
-            'file-loader',
+            {
+              loader: 'file-loader',
+              query: {
+                publicPath: 'static/images/',
+                outputPath: 'static/images/',
+                name: '[hash].[ext]'
+              }
+            },
             {
               loader: 'image-webpack-loader',
               options: {

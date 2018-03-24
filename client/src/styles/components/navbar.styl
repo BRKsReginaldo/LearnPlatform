@@ -1,0 +1,109 @@
+.navbar
+  background #fff
+  box-shadow $nav-shadow
+  display block
+  position relative
+  z-index 1010
+
+.navbar__inner
+  display flex
+  justify-content space-between
+  background inherit
+  border-top none
+  box-shadow none
+  box-sizing border-box
+  height 65px
+  max-width 1440px
+  margin auto
+  padding 0 20px
+  position relative
+  z-index 1011
+
+.navbar__logo-container
+  display flex
+  flex-direction row
+  align-items center
+  justify-content center
+
+  //  On small devices
+  +dfq(small)
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+.navbar__logo-wrap
+  margin-left 0
+  margin-right 16px
+  font-weight 400
+  text-decoration none
+  background transparent
+  cursor pointer
+
+.navbar__logo
+  max-width 100%
+  height auto
+  vertical-align middle
+  border 0
+  width 110px
+
+.navbar__mobile-spacer
+  display none
+  visibility hidden
+  +dfq(small)
+      display block
+      flex 1
+      min-width 1px
+      visibility hidden
+
+.navbar__mobile-button
+  display none
+  background none
+  border none
+  font-size 24px
+  color $icon-color
+  width 48px
+  height 48px
+  touch-action pan-y
+  -webkit-user-drag none
+  user-select: none
+  padding 0
+  outline none
+  +dfq(small)
+    display block
+    z-index 1
+    position relative
+
+.navbar__left, .navbar__right
+  display flex
+  flex-direction row
+  align-items center
+  justify-content space-between
+  +dfq(small)
+    flex initial
+    min-width 1px
+
+.navbar__search-wrapper
+  margin 0 25px
+  width auto
+  max-width 630px
+  display flex
+  flex-direction row
+  align-items center
+  +dfq(small)
+    margin 0
+    justify-content center
+
+.navbar__search-button
+  display none
+  font-size 20px
+  cursor pointer
+  +dfq(small)
+    display flex
+    flex-direction row
+    align-items center
+    justify-content center
+
+.navbar__profile-button
+  display block
